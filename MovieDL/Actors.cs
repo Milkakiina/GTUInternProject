@@ -8,10 +8,9 @@ namespace MovieDL
 {
     public class Actors
     {
-        public Guid ID { get; set; }
-        public int ListID { get; set; }
         public string ActorName { get; set; }
         public string ActorGender { get; set; }
+        public Guid ID { get; set; }
         public string moviePlayed { get; set; }
         public Actors(string actorName, string actorGender)
         {
@@ -23,5 +22,6 @@ namespace MovieDL
         {
             this.ID = Guid.NewGuid();
         }
+
     }
 }

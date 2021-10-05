@@ -8,8 +8,8 @@ namespace MovieDL
 {
     public class Entities
     {
-       public static List<Movie> movieList = new List<Movie>();
-       public static List<MovieActor> movieActorList = new List<MovieActor>();
+       public static List<Movies> movieList = new List<Movies>();
+
        public static List<Actors> actorList = new List<Actors>()
         {
             new Actors("Keanu Reeves", "male"),
@@ -24,5 +24,8 @@ namespace MovieDL
             new Actors("Julia Roberts", "female"),
             new Actors("Liv Tyler", "female"),
         };
+
+        public static List<MovieActors> movieActorList = new List<MovieActors>();
+      
     }
 }

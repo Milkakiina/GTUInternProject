@@ -13,11 +13,11 @@ namespace MovieUI.Models
         public string ReleaseDate { get; set; }
         public string Genre { get; set; }
         public string Director { get; set; }
+
+
         public List<SelectListItem> Actors { get; set; }
         public List<SelectListItem> PlayedActors { get; set; }
         public string SelectedActorText { get; set; }
-
-        public IEnumerable<SelectListItem> SelectedActor { get; set; }
 
 
     }

@@ -1,0 +1,38 @@
+﻿@model MovieUI.Models.ActorVM
+
+<div class="container">
+    <h3>Add New Actor: </h3>
+    @using (Html.BeginForm("CreateNewActor", "Home", FormMethod.Post))
+    {
+        <div>
+            <table border="1" class="table table-bordered" style="background-color:white;width:500px;">
+                <tbody>
+                    <tr>
+                        <td>
+                            Actor Name
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.ActorName, new {@Value = "Enter Actor Name", @class = "red" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Actor Gender
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.ActorGender, new {@Value = "Enter Actor Gender", @class = "red" })
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <input type="submit" class="btn-primary" />
+                            
+                        </td>
+                    </tr>
+                        <p>Go to <a href="https://localhost:5001/Actor/ActorsList"> Actor List</a>.</p>
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

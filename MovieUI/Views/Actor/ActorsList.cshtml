@@ -1,0 +1,31 @@
+﻿@model List<MovieUI.Models.ActorVM>
+<div class="container">
+    @using (Html.BeginForm("ActorList", "Home", FormMethod.Post))
+    {
+        <div>
+            <table border="1" class="table table-bordered" style="background-color:white;width:500px;">
+                <tbody>
+                    <tr>
+                        <th>
+                            Actor Name
+                        </th>
+                        <th>
+                            Actor Gender
+                        </th>        
+                    </tr>
+                        @foreach(var item in Model){
+                        var actor = item;
+                      <tr>
+                         <td>@actor.ActorName</td>  
+                         <td>@actor.ActorGender</td>  
+                      </tr>
+                     }
+                        <p> <a href="https://localhost:5001/Actor/CreateNewActor"> Add New Actor</a>.</p>
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+
+ 
+   

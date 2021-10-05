@@ -1,0 +1,29 @@
+﻿@model MovieUI.Models.LoginVM
+@using MovieDL
+<div class="container">
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+    {
+        <div>
+            <table border="1" class="table table-bordered" style="background-color:white;width:500px;">
+                <tbody>
+                    <tr>
+                        <th>
+                            @Html.Label("User Name: ")
+                        </th>
+                        <td> @Html.TextBoxFor(m => m.UserName, new {@Value = "Enter User Name", @class = "red" })</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.Label("Password: ")
+                        </th>
+                         <td> @Html.TextBoxFor(m => m.Password, new {@Value = "Enter Password", @class = "red" }) </td>
+                         <td>
+                            <input type="submit" class="btn-primary" />
+                             
+                        </td>
+                    </tr>                 
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

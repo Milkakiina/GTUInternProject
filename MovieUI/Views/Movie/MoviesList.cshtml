@@ -1,0 +1,41 @@
+﻿@model List<MovieUI.Models.MovieVM>
+<div class="container">
+    @using (Html.BeginForm("MoviesList", "Home", FormMethod.Post))
+    {
+        <div>
+            <table border="1" class="table table-bordered" style="background-color:white;width:500px;">
+                <tbody>
+                    <tr>
+                        
+                        <th>
+                            @Html.Label("Title")
+                        </th>
+                        <th>
+                            @Html.Label("Genre")
+                        </th>
+                        <th>
+                            @Html.Label("Director")
+                        </th>
+                        <th>
+                            @Html.Label("Release Date")
+                        </th>
+                        <th>
+                            @Html.Label("For More Info")
+                        </th>
+                    </tr>
+                        @foreach(var item in Model){
+                        var movie = item;
+                      <tr>
+                          <td>@movie.Title</td>  
+                          <td>@movie.Director</td>  
+                          <td>@movie.Genre</td>  
+                          <td>@movie.ReleaseDate</td>  
+                          <td><a href=@movie.Link> For More Info</a></td> 
+                      </tr>
+                     }
+                        <p> <a href="https://localhost:5001/Movie/CreateNewMovie"> Add New Movie</a>.</p>
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

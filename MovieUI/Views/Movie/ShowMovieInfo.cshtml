@@ -1,0 +1,62 @@
+﻿@model MovieUI.Models.MovieActorVM
+@using MovieDL
+<div class="container">
+    @using (Html.BeginForm("ShowMovieInfo", "Movie", FormMethod.Post))
+    {
+     @Html.HiddenFor(model => model.ID)
+        <div>
+            <table border="1" class="table table-bordered" style="background-color:white;width:500px;">
+                <tbody>
+                    <tr>
+                        <th>
+                            @Html.Label("Title: ")
+                        </th>
+                        <td> @Model.Title </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.Label("Genre: ")
+                        </th>
+                         <td> @Model.Genre </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.Label("Director: ")
+
+                        </th>
+                        <td> @Model.Director </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            @Html.Label("Release Date: ")
+                        </th>
+                        <td> @Model.ReleaseDate </td>
+                    </tr>
+                     <tr>
+                        <th>
+                            @Html.Label("Actor List: ")
+                        </th>
+                    <td> 
+                        
+                    @Html.DropDownList("actors", (IEnumerable
+                    <SelectListItem>)@Model.PlayedActors)                    </td>
+                    </tr>
+                    <tr>
+                    <th> @Html.Label("Unplayed Actor List:") </th>
+                 
+                    <td> 
+                        @Html.DropDownListFor(m=>m.SelectedActorText, Model.Actors, "Select Actor")
+                       
+                     </td>
+                        <td>
+                            <input type="submit" class="btn-primary" />
+                             
+                        </td>
+                    </tr>
+
+                        <p> <a  href="https://localhost:5001/Movie/MoviesList"> Back</a>.</p>
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
